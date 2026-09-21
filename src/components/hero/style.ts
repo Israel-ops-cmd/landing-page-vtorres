@@ -53,7 +53,7 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.p`
-  color: #b0b0b0;
+  color: #c4c4c4;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 0.8rem;
