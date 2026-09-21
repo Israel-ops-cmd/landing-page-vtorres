@@ -1,10 +1,13 @@
 import styled from "styled-components"
-import heroBg from "../../assets/hero.webp"
 
-export const HeroContainer = styled.section`
-  margin-top: 80px;
-  height: calc(100vh - 80px);
+interface HeroContainerProps {
+  bgImage: string;
+}
+
+export const HeroContainer = styled.section<HeroContainerProps>`
   width: 100%;
+  height: 100vh;
+  min-height: 700px;
   position: relative;
   display: flex;
   align-items: center;
@@ -12,72 +15,94 @@ export const HeroContainer = styled.section`
   box-sizing: border-box;
   overflow: hidden;
 
-  background-image: 
-    linear-gradient(90deg, #0c0c0c 40%, rgba(12, 12, 12, 0.75) 65%, rgba(12, 12, 12, 0.2) 100%), 
-    url(${heroBg});
-  
+  /* Imagem de fundo importada dos assets */
+  background-image: url(${props => props.bgImage});
   background-size: cover;
   background-position: center;
+
+  /* Gradiente lateral: Lado esquerdo 100% preto sólido, lado direito transparente */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg, 
+      #0c0c0c 0%, 
+      #0c0c0c 38%, 
+      rgba(12, 12, 12, 0.85) 50%, 
+      rgba(12, 12, 12, 0.2) 75%, 
+      transparent 100%
+    );
+    z-index: 1;
+  }
+
+  @media (max-width: 968px) {
+    padding: 0 1.5rem;
+    &::before {
+      background: linear-gradient(
+        180deg, 
+        rgba(12, 12, 12, 0.95) 0%, 
+        rgba(12, 12, 12, 0.8) 100%
+      );
+    }
+  }
 `
 
 export const HeroContent = styled.div`
-  max-width: 680px;
+  position: relative;
+  z-index: 2; /* Garante que o texto fica acima do gradiente preto */
+  max-width: 650px;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  z-index: 2;
+  gap: 1.5rem;
 `
 
 export const Subtitle = styled.span`
-  /* Dourado limpo e sofisticado no subtítulo */
-  color: #d4af37;
-  font-size: 0.95rem;
+  color: #aa7c11;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin-bottom: 0.2rem;
+  letter-spacing: 2px;
 `
 
 export const Title = styled.h1`
   color: #ffffff;
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
 
   span {
-    /* Gradiente dourado moderno, brilhante e sem o tom alaranjado */
-    background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #d4af37;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
   }
 `
 
 export const Description = styled.p`
-  color: #c4c4c4;
+  color: #E2E2E2;
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 0.8rem;
 `
 
 export const CtaButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  /* Botão com o mesmo padrão de dourado nobre */
+  display: inline-block;
   background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
-  color: #121212;
-  padding: 0.95rem 2.2rem;
+  color: #0c0c0c;
+  padding: 1rem 2rem;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 1rem;
   text-decoration: none;
+  text-align: center;
   width: fit-content;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    filter: brightness(1.15);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
   }
 `
