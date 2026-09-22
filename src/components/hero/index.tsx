@@ -1,8 +1,9 @@
 import * as S from "./style"
+import backgroundHero from "../../assets/Gemini_Generated_Image_kjslszkjslszkjsl.jpg"
 
 export function Hero() {
     return (
-        <S.HeroContainer>
+        <S.HeroContainer bgImage={backgroundHero}>
             <S.HeroContent>
                 <S.Subtitle>Engenharia e Construção de Alto Padrão</S.Subtitle>
                 <S.Title>

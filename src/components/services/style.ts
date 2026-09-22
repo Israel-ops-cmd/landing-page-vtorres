@@ -95,8 +95,8 @@ export const ServiceTitle = styled.h3`
 `
 
 export const ServiceDescription = styled.p`
-  color: #c4c4c4; /* Cinzento muito mais legível e elegante no fundo escuro */
-  font-size: 1.05rem;
+  color: #E2E2E2;
+  font-size: 1rem;
   line-height: 1.6;
 `
 
