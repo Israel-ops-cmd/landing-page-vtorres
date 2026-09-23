@@ -1,12 +1,17 @@
 import * as S from "./style"
 import { MessageCircle } from "lucide-react"
 
+import imagem1 from "../../assets/imagem_1.webp"
+import imagem2 from "../../assets/imagem_2.webp"
+import imagem3 from "../../assets/imagem_3.webp"
+import hero_pref from "../../assets/hero_pref.webp"
+
 export function Portfolio() {
   const projects = [
-    { id: 1, title: "Residência Alphaville", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" },
-    { id: 2, title: "Casa Contemporânea", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" },
-    { id: 3, title: "Projeto Horizon", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop" },
-    { id: 4, title: "Residência Jardins", image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800&auto=format&fit=crop" },
+    { id: 1, title: "Pórtico de Brejinho", image: imagem1 },
+    { id: 2, title: "Quadra do Colégio Over", image: imagem2 },
+    { id: 3, title: "Projeto Horizon", image: imagem3 },
+    { id: 4, title: "Prefeitura de Curral de Cima", image: hero_pref },
   ]
 
   return (
