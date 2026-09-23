@@ -2,19 +2,16 @@ import styled from "styled-components"
 
 export const PortfolioContainer = styled.section`
   width: 100%;
-  background-color: #0c0c0c; /* Fundo preto elegante igual ao da referência */
-  padding: 6rem 4rem;
-  box-sizing: border-box;
+  padding: 5rem 4rem;
+  background-color: #0c0c0c;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
-  position: relative;
-  z-index: 2;
+  gap: 3rem;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 4rem 1.5rem;
-    gap: 3rem;
+    padding: 3rem 1.5rem;
   }
 `
 
@@ -27,10 +24,10 @@ export const HeaderWrapper = styled.div`
 
 export const SectionTag = styled.span`
   color: #aa7c11;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
 `
 
 export const SectionTitle = styled.h2`
@@ -45,10 +42,11 @@ export const SectionTitle = styled.h2`
 
 export const ProjectsGrid = styled.div`
   display: grid;
+  /* Força exatamente 4 colunas na mesma linha em telas grandes */
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -61,22 +59,18 @@ export const ProjectsGrid = styled.div`
 
 export const ProjectCard = styled.div`
   position: relative;
-  height: 480px; /* Altura vertical imponente igual à referência */
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  height: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 
   &:hover img {
-    transform: scale(1.08); /* Efeito de zoom suave ao passar o rato */
+    transform: scale(1.05);
   }
 
   &:hover div {
     opacity: 1;
-  }
-
-  @media (max-width: 768px) {
-    height: 400px;
   }
 `
 
@@ -93,42 +87,42 @@ export const ProjectOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(12, 12, 12, 0.9) 0%,
-    rgba(12, 12, 12, 0.3) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg, transparent 50%, rgba(12, 12, 12, 0.9) 100%);
   display: flex;
   align-items: flex-end;
-  padding: 2rem;
-  opacity: 0.8;
+  padding: 1.25rem;
+  opacity: 0.85;
   transition: opacity 0.3s ease;
+  box-sizing: border-box;
 `
 
 export const ProjectTitle = styled.h3`
   color: #ffffff;
-  font-size: 1.25rem;
+  font-size: 1rem; /* Diminuído levemente para acomodar nomes maiores */
   font-weight: 600;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita o texto a no máximo 2 linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 `
 
 export const CtaButton = styled.a`
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  background-color: #00875f; /* Verde estilo WhatsApp da referência */
-  color: #ffffff;
-  padding: 1rem 2.5rem;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
+  color: #0c0c0c;
+  padding: 1rem 2rem;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 135, 95, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: #00a36c;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 135, 95, 0.4);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
   }
 `
