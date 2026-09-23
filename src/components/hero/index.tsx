@@ -1,5 +1,5 @@
 import * as S from "./style"
-import backgroundHero from "../../assets/Gemini_Generated_Image_kjslszkjslszkjsl.jpg"
+import backgroundHero from "../../assets/hero_pref.webp"
 
 export function Hero() {
     return (
