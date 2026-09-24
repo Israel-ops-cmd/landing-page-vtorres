@@ -15,12 +15,16 @@ export const HeroContainer = styled.section<HeroContainerProps>`
   box-sizing: border-box;
   overflow: hidden;
 
+  /* Suavização de fontes global para dar o aspecto minimalista */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   /* Imagem de fundo importada dos assets */
   background-image: url(${props => props.bgImage});
   background-size: cover;
   background-position: center;
 
-  /* Gradiente lateral: Lado esquerdo 100% preto sólido, lado direito transparente */
+  /* Gradiente lateral ajustado para maior suavidade */
   &::before {
     content: '';
     position: absolute;
@@ -53,8 +57,8 @@ export const HeroContainer = styled.section<HeroContainerProps>`
 
 export const HeroContent = styled.div`
   position: relative;
-  z-index: 2; /* Garante que o texto fica acima do gradiente preto */
-  max-width: 650px;
+  z-index: 2;
+  max-width: 680px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -62,47 +66,57 @@ export const HeroContent = styled.div`
 
 export const Subtitle = styled.span`
   color: #aa7c11;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
 `
 
 export const Title = styled.h1`
   color: #ffffff;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
+  /* Reduzido levemente de 3rem para 2.75rem e ajustado o peso para 600, trazendo sofisticação e minimalismo */
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
 
   span {
     color: #d4af37;
   }
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 `
 
 export const Description = styled.p`
-  color: #E2E2E2;
-  font-size: 1.1rem;
-  line-height: 1.6;
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 300; /* Fonte mais leve para dar o toque minimalista da referência */
+  max-width: 600px;
 `
 
 export const CtaButton = styled.a`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
   color: #0c0c0c;
-  padding: 1rem 2rem;
-  border-radius: 6px;
+  padding: 0.9rem 2.2rem;
+  /* Transformado em formato "pílula" totalmente arredondado igual à referência */
+  border-radius: 50px; 
   font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
   text-align: center;
   width: fit-content;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
   }
 `

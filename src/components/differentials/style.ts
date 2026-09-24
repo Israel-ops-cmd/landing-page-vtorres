@@ -11,11 +11,6 @@ export const DifferentialsContainer = styled.section`
   gap: 4rem;
   position: relative;
   
-  /* O corte assimétrico idêntico à referência:
-     - Começa mais alto na esquerda (0 2vw)
-     - Desce até um ponto mais baixo deslocado para a esquerda (35% 5vw)
-     - Sobe suavemente até o canto superior direito (100% 1.5vw)
-  */
   clip-path: polygon(0 2vw, 35% 5vw, 100% 1.5vw, 100% 100%, 0 100%);
   margin-top: -3.5vw;
   z-index: 3;
@@ -31,24 +26,25 @@ export const HeaderWrapper = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 `
 
 export const SectionTag = styled.span`
   color: #aa7c11;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 4px; 
 `
 
 export const SectionTitle = styled.h2`
   color: #121212;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 `
 
@@ -67,11 +63,11 @@ export const CardsGrid = styled.div`
 
 export const Card = styled.div`
   background-color: #0c0c0c;
-  border-radius: 8px;
+  border-radius: 0px; 
   padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -95,24 +91,44 @@ export const Card = styled.div`
 `
 
 export const IconWrapper = styled.div`
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  border-radius: 0px; 
   background-color: rgba(212, 175, 55, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #d4af37;
+  margin-bottom: 0.5rem;
 `
 
 export const CardTitle = styled.h3`
   color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  
+  position: relative;
+  padding-bottom: 1.2rem;
+  margin-bottom: 0.2rem;
+
+  /* LINHA MAIOR E UM POUCO MAIS GROSSA */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px; /* Aumentado de 45px para 65px */
+    height: 3px; /* Aumentado de 2px para 3px */
+    background: #d4af37;
+    opacity: 0.9;
+  }
 `
 
 export const CardDescription = styled.p`
-  color: #c4c4c4;
-  font-size: 1rem;
+  color: #ffffff; /* Alterado para branco puro */
+  font-size: 0.95rem;
   line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.9; /* Leve ajuste de opacidade opcional para suavizar o branco puro no fundo escuro, ou remova se quiser 100% opaco */
 `
