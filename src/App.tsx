@@ -4,6 +4,7 @@ import { Hero } from "./components/hero"
 import { Services } from "./components/services"
 import { Differentials } from "./components/differentials"
 import { Portfolio } from "./components/portfolio"
+import { About } from "./components/about"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Services />
     <Differentials />
     <Portfolio />
+    <About />
     </>
   )
 }
