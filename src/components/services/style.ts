@@ -8,13 +8,21 @@ export const ServicesContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 4rem;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 768px) {
+    padding: 4rem 1.5rem;
+  }
 `
 
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Linha branca e marcante no topo */
+  border-bottom: 2px solid #ffffff;
   padding-bottom: 2rem;
 
   @media (max-width: 768px) {
@@ -36,12 +44,17 @@ export const SectionTag = styled.span`
 
 export const SectionTitle = styled.h2`
   color: #ffffff;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.35rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+
+  @media (max-width: 768px) {
+    font-size: 1.9rem;
+  }
 `
 
 export const TopButton = styled.a`
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   padding: 0.8rem 1.8rem;
   border-radius: 50px;
@@ -66,12 +79,15 @@ export const ServiceItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 0;
+  
+  /* Linha divisória com 2px de espessura e em BRANCO PURO (#ffffff) */
+  border-bottom: 2px solid #ffffff;
+  
   transition: all 0.3s ease;
 
   &:hover {
-    padding-left: 10px; /* Pequeno efeito de deslize elegante */
+    padding-left: 10px;
   }
 
   @media (max-width: 900px) {
@@ -85,19 +101,21 @@ export const ServiceInfo = styled.div`
   max-width: 650px;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
 `
 
 export const ServiceTitle = styled.h3`
   color: #ffffff;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  letter-spacing: -0.3px;
 `
 
 export const ServiceDescription = styled.p`
-  color: #E2E2E2;
-  font-size: 1rem;
-  line-height: 1.6;
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  font-weight: 300;
 `
 
 export const ActionWrapper = styled.a`

@@ -33,7 +33,7 @@ export function Portfolio() {
       </S.ProjectsGrid>
 
       <S.CtaButton href="https://wa.me/" target="_blank" rel="noopener noreferrer">
-        <MessageCircle size={20} />
+        <MessageCircle size={18} />
         Fale Conosco
       </S.CtaButton>
     </S.PortfolioContainer>
