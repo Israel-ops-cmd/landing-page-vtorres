@@ -6,6 +6,7 @@ import { Differentials } from "./components/differentials"
 import { Portfolio } from "./components/portfolio"
 import { About } from "./components/about"
 import { Testimonials } from "./components/testimonials"
+import { Contact } from "./components/contact"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Portfolio />
     <About />
     <Testimonials />
+    <Contact />
     </>
   )
 }
