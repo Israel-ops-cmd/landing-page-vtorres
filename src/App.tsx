@@ -5,6 +5,7 @@ import { Services } from "./components/services"
 import { Differentials } from "./components/differentials"
 import { Portfolio } from "./components/portfolio"
 import { About } from "./components/about"
+import { Testimonials } from "./components/testimonials"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
     <Differentials />
     <Portfolio />
     <About />
+    <Testimonials />
     </>
   )
 }
