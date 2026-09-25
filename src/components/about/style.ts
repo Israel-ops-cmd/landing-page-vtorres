@@ -34,6 +34,11 @@ export const ImageAreaWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-shrink: 0;
+
+  @media (max-width: 968px) {
+    width: 100%;
+    justify-content: center;
+  }
 `
 
 export const FloatingTitle = styled.h2`
@@ -51,8 +56,8 @@ export const FloatingTitle = styled.h2`
   opacity: 0.95;
 
   @media (max-width: 968px) {
-    left: 1rem;
-    font-size: 3.5rem;
+    left: 0.5rem;
+    font-size: 3rem;
   }
 `
 
@@ -67,6 +72,7 @@ export const ImageColumn = styled.div`
 
   @media (max-width: 968px) {
     width: 100%;
+    max-width: 360px;
     height: 400px;
   }
 `
@@ -85,12 +91,15 @@ export const LogoOverlay = styled.div`
   align-items: center;
   gap: 0.75rem;
   z-index: 2;
+  background: rgba(12, 12, 12, 0.6);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
 
   img {
     width: 28px;
     height: auto;
     object-fit: contain;
-    /* Adiciona brilho/sombra para destacar bem sobre a foto */
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
   }
 `
@@ -101,20 +110,18 @@ export const LogoTextInfo = styled.div`
   line-height: 1.15;
 
   span:first-child {
-    color: #ffffff; /* Branco com sombra para legibilidade impecável */
+    color: #ffffff;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   }
 
   span:last-child {
-    color: #000000; /* Detalhe em dourado sofisticado */
+    color: #D4AF37; /* Corrigido de preto para dourado para garantir contraste legível */
     font-size: 0.55rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   }
 `
 
@@ -146,7 +153,7 @@ export const TextColumn = styled.div`
 
 export const SectionTag = styled.span`
   color: #d4af37;
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -163,15 +170,18 @@ export const SectionTitle = styled.h2`
   }
 `
 
-/* Texto mais leve, fluido e com mais respiro (minimalista) */
 export const Description = styled.p`
   color: #B5B5B5;
   font-size: 0.92rem;
   font-weight: 300;
   line-height: 1.7;
+
+  strong {
+    color: #ffffff;
+    font-weight: 400;
+  }
 `
 
-/* Botão com dourado refinado e transição limpa (sem amarelo chapado) */
 export const CtaButton = styled.a`
   display: inline-block;
   margin-top: 1rem;

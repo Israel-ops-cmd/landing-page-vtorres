@@ -101,19 +101,26 @@ export const CtaButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem; /* Ajustado para acomodar perfeitamente o ícone do WhatsApp */
   background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
   color: #0c0c0c;
   padding: 0.9rem 2.2rem;
-  /* Transformado em formato "pílula" totalmente arredondado igual à referência */
-  border-radius: 50px; 
+  border-radius: 50px; /* Formato pílula idêntico ao Contact */
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
+  letter-spacing: 0.5px;
   text-align: center;
   width: fit-content;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 0.5rem;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  svg {
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+  }
 
   &:hover {
     transform: translateY(-2px);

@@ -1,37 +1,52 @@
 import * as S from "./style"
 
+// Dados dos diferenciais internos para evitar quebras de importação
 const differentialsData = [
     {
-        title: "Atendimento Próximo",
-        description: "Relação próxima e atenciosa com cada cliente para satisfazer as necessidades individuais e alinhar cada detalhe do projeto.",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-        )
+        title: "Atendimento Direto e Engenharia Próxima",
+        description: "Canal aberto e transparente com os engenheiros responsáveis, garantindo agilidade na tomada de decisão e alinhamento constante com a fiscalização.",
+        iconType: "user"
     },
     {
-        title: "Prazos Cumpridos",
-        description: "Cronogramas rigorosamente seguidos e planeamento estratégico para entregas pontuais, sem surpresas ou atrasos.",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-        )
+        title: "Cumprimento Rigoroso de Prazos",
+        description: "Planejamento estratégico e cronogramas executivos rigorosamente seguidos para entregas pontuais, prevenindo sanções e atrasos contratuais.",
+        iconType: "clock"
     },
     {
-        title: "Economia Efetiva",
-        description: "Nossa abordagem garante uma gestão financeira inteligente, otimizando recursos, evitando desperdícios e maximizando o valor do investimento.",
-        icon: (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-        )
+        title: "Gestão Financeira e Econômica",
+        description: "Controle orçamentário eficiente, otimização de recursos e engenharia de custos para evitar desperdícios e aditivos desnecessários.",
+        iconType: "dollar"
     }
-]
+];
+
+// Função auxiliar para renderizar os ícones de forma limpa
+function renderIcon(type: string) {
+    switch (type) {
+        case "user":
+            return (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            );
+        case "clock":
+            return (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            );
+        case "dollar":
+            return (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+            );
+        default:
+            return null;
+    }
+}
 
 export function Differentials() {
     return (
@@ -44,7 +59,7 @@ export function Differentials() {
             <S.CardsGrid>
                 {differentialsData.map((item, index) => (
                     <S.Card key={index}>
-                        <S.IconWrapper>{item.icon}</S.IconWrapper>
+                        <S.IconWrapper>{renderIcon(item.iconType)}</S.IconWrapper>
                         <S.CardTitle>{item.title}</S.CardTitle>
                         <S.CardDescription>{item.description}</S.CardDescription>
                     </S.Card>
