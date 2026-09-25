@@ -1,6 +1,5 @@
 import * as S from "./style"
 import backgroundHero from "../../assets/hero_pref.webp"
-import { MessageCircle } from "lucide-react"
 
 export function Hero() {
     return (
@@ -11,11 +10,15 @@ export function Hero() {
                     Transformando Projetos em <span>Realidade</span> com Rigor Técnico.
                 </S.Title>
                 <S.Description>
-                    Da fundação ao acabamento, a V Torres Engenharia entrega soluções completas em execução, reformas e infraestrutura com total transparência e excelência.
+                    Engenharia e Construção de Alto Padrão para Obras Públicas e Grandes Projetos, entregando soluções completas em infraestrutura com total conformidade, transparência e excelência.
                 </S.Description>
-                <S.CtaButton href="https://wa.me/" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle size={20} />
-                    Fale com um Engenheiro
+                <S.CtaButton 
+                    href="https://wa.me/5584999999999?text=Olá,%20gostaria%20de%20orçamento%20para%20projeto." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                >
+                    {/* SVG do WhatsApp */}
+                    FALE COM UM ENGENHEIRO
                 </S.CtaButton>
             </S.HeroContent>
         </S.HeroContainer>

@@ -4,35 +4,35 @@ import * as S from "./style"
 const testimonialsData = [
     {
         id: 1,
-        text: "Construir minha casa com a V Torres Engenharia foi uma experiência incrível! Desde o primeiro encontro, senti que minha visão era valorizada e levada a sério. O resultado final superou todas as minhas expectativas, e agora tenho o lar dos meus sonhos.",
-        name: "Marcos Vinícius",
+        text: "A execução da obra foi impecável e o rigor com o cronograma físico-financeiro superou nossas expectativas. Uma empresa séria e comprometida com a engenharia de qualidade.",
+        name: "Eng. Carlos Eduardo",
         location: "Natal, RN",
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
     },
     {
         id: 2,
-        text: "Estou impressionado com o profissionalismo e a dedicação. Eles não apenas construíram uma casa para mim; criaram um espaço onde minha família pode viver e crescer juntos. Cada detalhe foi cuidadosamente pensado.",
+        text: "Profissionais de altíssima qualificação técnica. Cumpriram rigorosamente todas as exigências contratuais e normativas do projeto. Recomendo pela transparência e solidez.",
         name: "Juliana Paiva",
         location: "Natal, RN",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
     },
     {
         id: 3,
-        text: "Eu tinha altas expectativas ao escolher a construtora, e eles superaram em todos os aspectos. Desde a qualidade dos materiais até a atenção aos detalhes, cada etapa foi executada com excelência.",
+        text: "Altíssimo padrão de entrega e suporte técnico impecável durante todas as etapas. A VTorres demonstra total domínio em projetos de infraestrutura complexos.",
         name: "Roberto Almeida",
         location: "Parnamirim, RN",
         avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
     },
     {
         id: 4,
-        text: "Profissionais de altíssima qualidade! Cumpriram os prazos combinados e o acabamento da obra ficou impecável. Recomendo de olhos fechados para quem quer construir sem dor de cabeça.",
+        text: "Cumpriram rigorosamente os prazos combinados e o padrão de acabamento e segurança estrutural ficou excelente. Segurança jurídica e técnica do início ao fim.",
         name: "Camila Medeiros",
         location: "Parnamirim, RN",
         avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop"
     },
     {
         id: 5,
-        text: "A transparência durante todo o processo de construção foi o que mais me chamou a atenção. Sempre prontos a tirar dúvidas e sugerir melhorias que economizaram nosso orçamento.",
+        text: "A transparência na gestão de custos e o alinhamento com as normas técnicas foram diferenciais marcantes. Parceria de total confiança para futuros projetos.",
         name: "Lucas Fernandes",
         location: "Natal, RN",
         avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop"
@@ -41,9 +41,8 @@ const testimonialsData = [
 
 export function Testimonials() {
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [isPaused, setIsPaused] = useState(false)
     const itemsPerPage = 3
-    // Como temos 5 itens, as posições de início válidas para mostrar 3 são 0, 1 e 2. 
-    // Para tornar circular perfeito (passando de 3 em 3 ou rodando o array):
     const maxIndex = testimonialsData.length - itemsPerPage
 
     const handleNext = () => {
@@ -54,7 +53,6 @@ export function Testimonials() {
         setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1))
     }
 
-    // Seleciona os 3 visíveis garantindo que se chegar ao fim, ele dá a volta circular corretamente
     const getVisibleTestimonials = () => {
         let items = []
         for (let i = 0; i < itemsPerPage; i++) {
@@ -66,13 +64,16 @@ export function Testimonials() {
 
     const visibleTestimonials = getVisibleTestimonials()
 
+    // Autoplay pausado caso o usuário passe o mouse para ler com calma
     useEffect(() => {
+        if (isPaused) return
+
         const interval = setInterval(() => {
             handleNext()
         }, 7000)
 
         return () => clearInterval(interval)
-    }, [currentIndex])
+    }, [currentIndex, isPaused])
 
     return (
         <S.TestimonialsContainer id="avaliacoes">
@@ -83,11 +84,14 @@ export function Testimonials() {
             </S.SectionCurve>
 
             <S.HeaderWrapper>
-                <S.SectionTag>Avaliações</S.SectionTag>
-                <S.SectionTitle>O que nossos clientes dizem</S.SectionTitle>
+                <S.SectionTag>Credibilidade e Parcerias</S.SectionTag>
+                <S.SectionTitle>O que dizem quem confia na nossa engenharia</S.SectionTitle>
             </S.HeaderWrapper>
 
-            <S.CarouselWrapper>
+            <S.CarouselWrapper 
+                onMouseEnter={() => setIsPaused(true)} 
+                onMouseLeave={() => setIsPaused(false)}
+            >
                 <S.NavButton className="prev" onClick={handlePrev} aria-label="Depoimento anterior">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 18 9 12 15 6"></polyline>

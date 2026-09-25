@@ -24,16 +24,16 @@ export const HeaderWrapper = styled.div`
 
 export const SectionTag = styled.span`
   color: #aa7c11;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 4px; /* Padronizado com o letter-spacing elegante das outras seções */
 `
 
 export const SectionTitle = styled.h2`
   color: #ffffff;
   font-size: 2.3rem;
-  font-weight: 450;
+  font-weight: 500;
   letter-spacing: -0.5px;
 
   @media (max-width: 768px) {
@@ -59,7 +59,7 @@ export const ProjectsGrid = styled.div`
 
 export const ProjectCard = styled.div`
   position: relative;
-  border-radius: 0px; /* Cantos totalmente retos, exatamente como na referência */
+  border-radius: 0px; 
   overflow: hidden;
   height: 400px;
   background-color: #141414;
@@ -115,17 +115,23 @@ export const CtaButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  /* Retornado o gradiente dourado clássico da identidade */
+  gap: 0.75rem;
   background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
-  color: #0c0c0c; /* Texto escuro para contrastar perfeitamente com o fundo dourado */
+  color: #0c0c0c; 
   padding: 0.9rem 2.4rem;
-  border-radius: 50px; /* Formato pílula redondinho nas pontas */
+  border-radius: 50px; 
   font-weight: 600;
   font-size: 0.95rem;
+  letter-spacing: 0.5px;
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  svg {
+    fill: currentColor;
+    width: 18px;
+    height: 18px;
+  }
 
   &:hover {
     transform: translateY(-2px);

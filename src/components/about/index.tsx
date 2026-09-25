@@ -14,9 +14,9 @@ export function About() {
           </S.FloatingTitle>
 
           <S.ImageColumn>
-            <S.AboutImage src={aboutImg} alt="Sobre nossa construtora" />
+            <S.AboutImage src={aboutImg} alt="Infraestrutura e obras executadas pela Construtora VTorres" />
             
-            {/* Selo minimalista com a logo preta e o nome ao lado */}
+            {/* Selo minimalista com a logo e o nome ao lado */}
             <S.LogoOverlay>
               <img src={logoVtorres} alt="Logo Vtorres" />
               <S.LogoTextInfo>
@@ -28,23 +28,23 @@ export function About() {
         </S.ImageAreaWrapper>
 
         <S.TextColumn>
-          <S.SectionTag>Construtora Vtorres</S.SectionTag>
+          <S.SectionTag>Engenharia e Solidez</S.SectionTag>
           <S.SectionTitle>Sobre nós</S.SectionTitle>
           
           <S.Description>
-            Nossa missão é transformar sonhos em realidade. Com uma equipe dedicada e apaixonada pelo que faz, somos uma construtora comprometida em oferecer excelência em cada projeto que realizamos.
+            A <strong>Construtora VTorres</strong> consolida sua trajetória na execução de projetos de engenharia civil com alto rigor técnico, pautada pela eficiência, segurança estrutural e cumprimento rigoroso de prazos.
           </S.Description>
 
           <S.Description>
-            Construímos não apenas estruturas, mas lares onde histórias são escritas e memórias são criadas. Cada obra que entregamos reflete a personalidade, o estilo de vida e o sucesso de nossos clientes.
+            Atuamos de forma integrada no desenvolvimento de obras de infraestrutura e projetos institucionais, transformando planejamento estratégico em estruturas duráveis e de alto impacto para a sociedade.
           </S.Description>
 
           <S.Description>
-            O que nos diferencia é o compromisso inegociável com a qualidade, transparência e satisfação, do primeiro contato até a entrega final da chave.
+            Nosso diferencial competitivo reside na transparência operacional, na conformidade normativa absoluta e na gestão técnica qualificada do primeiro planejamento à entrega final.
           </S.Description>
 
           <S.CtaButton href="#contato">
-            Leia Mais
+            Conheça Nossos Projetos
           </S.CtaButton>
         </S.TextColumn>
       </S.ContentWrapper>

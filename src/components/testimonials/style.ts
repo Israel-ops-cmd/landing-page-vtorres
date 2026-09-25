@@ -54,25 +54,25 @@ export const HeaderWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   padding: 0 1.5rem;
-  gap: 0.5rem;
+  gap: 0.8rem;
 `
 
 export const SectionTag = styled.span`
-  color: #2e7d32;
-  font-size: 0.85rem;
-  font-weight: 600;
+  color: #aa7c11;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 4px; /* Deixa o espaçamento bem largo e minimalista como na referência */
 `
 
 export const SectionTitle = styled.h2`
   color: #1a1a1a;
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 2.3rem;
+  font-weight: 500; /* Peso médio deixa mais sofisticado e moderno */
   letter-spacing: -0.5px;
 
   @media (max-width: 768px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `
 
@@ -119,30 +119,27 @@ export const TestimonialCard = styled.div`
 `
 
 export const Stars = styled.div`
-  color: #2e7d32;
-  font-size: 1.1rem;
+  color: #d4af37;
+  font-size: 1rem;
   letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 `
 
 export const TestimonialText = styled.p`
-  color: #4a4a4a;
-  font-size: 1rem;
+  color: #555555;
+  font-size: 0.95rem;
   line-height: 1.8;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 300; /* Texto mais leve, puro minimalismo */
 `
 
 export const ClientInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-top: none; 
-  padding-top: 0;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -150,32 +147,32 @@ export const ClientInfo = styled.div`
 
 export const ClientName = styled.strong`
   color: #1a1a1a;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   display: block;
 `
 
 export const ClientLocation = styled.span`
-  color: #757575;
-  font-size: 0.82rem;
+  color: #888888;
+  font-size: 0.8rem;
+  font-weight: 300;
 `
 
 export const NavButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #ffffff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e8e8e8;
   color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   z-index: 5;
 
   &.prev {
@@ -187,9 +184,9 @@ export const NavButton = styled.button`
   }
 
   &:hover {
-    background: #2e7d32;
+    background: #d4af37;
     color: #ffffff;
-    border-color: #2e7d32;
+    border-color: #d4af37;
   }
 
   @media (max-width: 1024px) {
@@ -204,17 +201,17 @@ export const DotsContainer = styled.div`
   margin-top: 3rem;
 
   span {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background-color: #d0d0d0;
+    background-color: #dcdcdc;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &.active {
-      background-color: #2e7d32;
-      width: 24px;
-      border-radius: 4px;
+      background-color: #d4af37;
+      width: 20px;
+      border-radius: 3px;
     }
   }
 `

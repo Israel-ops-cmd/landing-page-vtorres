@@ -2,16 +2,16 @@ import * as S from "./style"
 
 const servicesData = [
     {
-        title: "Construção",
-        description: "Especializados em execução residencial e infraestrutura de alto padrão, oferecemos soluções completas, da fundação ao acabamento, garantindo obras sólidas e de alta qualidade."
+        title: "Infraestrutura e Obras Públicas",
+        description: "Execução especializada de obras civis institucionais, pavimentação, praças, quadras poliesportivas e infraestrutura urbana com rigor técnico e cumprimento de exigências legais."
     },
     {
-        title: "Obras Turnkey",
-        description: "Deixe tudo por nossa conta. Do projeto e planejamento à entrega das chaves, cuidamos de cada detalhe para você sem preocupações."
+        title: "Projetos Corporativos e Turnkey",
+        description: "Soluções completas de ponta a ponta. Da elaboração do projeto executivo e planejamento orçamentário à entrega final da obra pronta para uso, sem desvios de cronograma."
     },
     {
-        title: "Gerenciamento e Reformas",
-        description: "Supervisão técnica rigorosa, controle de custos e cronogramas para reformas comerciais ou residenciais com total transparência."
+        title: "Gerenciamento e Grandes Reformas",
+        description: "Supervisão técnica rigorosa, controle estrito de custos, gestão de cronogramas e conformidade normativa para reformas de edifícios comerciais e públicos."
     }
 ]
 
