@@ -12,8 +12,13 @@ export const ServicesContainer = styled.section`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 768px) {
-    padding: 4rem 1.5rem;
+  @media (max-width: 968px) {
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 3rem 1.25rem;
   }
 `
 
@@ -21,7 +26,6 @@ export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  /* Linha branca e marcante no topo */
   border-bottom: 2px solid #ffffff;
   padding-bottom: 2rem;
 
@@ -35,7 +39,7 @@ export const HeaderWrapper = styled.div`
 export const SectionTag = styled.span`
   color: #d4af37;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   display: block;
@@ -44,13 +48,9 @@ export const SectionTag = styled.span`
 
 export const SectionTitle = styled.h2`
   color: #ffffff;
-  font-size: 2.35rem;
+  font-size: clamp(1.8rem, 3vw, 2.35rem);
   font-weight: 600;
   letter-spacing: -0.5px;
-
-  @media (max-width: 768px) {
-    font-size: 1.9rem;
-  }
 `
 
 export const TopButton = styled.a`
@@ -62,11 +62,17 @@ export const TopButton = styled.a`
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap;
 
   &:hover {
     border-color: #d4af37;
     color: #d4af37;
     background-color: rgba(212, 175, 55, 0.05);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
   }
 `
 
@@ -80,20 +86,22 @@ export const ServiceItem = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 3rem 0;
-  
-  /* Linha divisória com 2px de espessura e em BRANCO PURO (#ffffff) */
   border-bottom: 2px solid #ffffff;
-  
   transition: all 0.3s ease;
 
   &:hover {
     padding-left: 10px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 968px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 2.5rem 0;
+
+    &:hover {
+      padding-left: 0; /* Remove o deslocamento lateral em telas touch para evitar estranheza visual */
+    }
   }
 `
 
@@ -102,20 +110,28 @@ export const ServiceInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+
+  @media (max-width: 968px) {
+    max-width: 100%;
+  }
 `
 
 export const ServiceTitle = styled.h3`
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 600;
   letter-spacing: -0.3px;
 `
 
 export const ServiceDescription = styled.p`
-  color: #ffffff;
+  color: #e0e0e0;
   font-size: 0.98rem;
   line-height: 1.7;
   font-weight: 300;
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `
 
 export const ActionWrapper = styled.a`
@@ -123,6 +139,7 @@ export const ActionWrapper = styled.a`
   align-items: center;
   gap: 1.2rem;
   text-decoration: none;
+  flex-shrink: 0;
 
   .label {
     color: #d4af37;
@@ -153,6 +170,20 @@ export const ActionWrapper = styled.a`
       color: #0c0c0c;
       border-color: transparent;
       transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 968px) {
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+
+    .icon-circle {
+      width: 40px;
+      height: 40px;
     }
   }
 `

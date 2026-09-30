@@ -32,7 +32,7 @@ export function Portfolio() {
       </S.ProjectsGrid>
 
       <S.CtaButton 
-        href="https://wa.me/5584999999999?text=Olá,%20vi%20o%20portfólio%20no%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20projeto." 
+        href="https://wa.me/5584987970076?text=Olá,%20vi%20o%20portfólio%20no%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20projeto." 
         target="_blank" 
         rel="noopener noreferrer"
       >

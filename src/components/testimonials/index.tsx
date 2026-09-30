@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import * as S from "./style"
 
 const testimonialsData = [
@@ -42,7 +42,21 @@ const testimonialsData = [
 export function Testimonials() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isPaused, setIsPaused] = useState(false)
-    const itemsPerPage = 3
+    const [isMobile, setIsMobile] = useState(false)
+
+    const touchStartX = useRef(0)
+    const touchEndX = useRef(0)
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth <= 1024)
+        }
+        checkScreenSize()
+        window.addEventListener("resize", checkScreenSize)
+        return () => window.removeEventListener("resize", checkScreenSize)
+    }, [])
+
+    const itemsPerPage = isMobile ? 1 : 3
     const maxIndex = testimonialsData.length - itemsPerPage
 
     const handleNext = () => {
@@ -51,6 +65,31 @@ export function Testimonials() {
 
     const handlePrev = () => {
         setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1))
+    }
+
+    // Adicionada a tipagem correta para o evento de toque (React.TouchEvent)
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX
+    }
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        touchEndX.current = e.touches[0].clientX
+    }
+
+    const handleTouchEnd = () => {
+        if (!touchStartX.current || !touchEndX.current) return
+        
+        const distance = touchStartX.current - touchEndX.current
+        const minSwipeDistance = 50
+
+        if (distance > minSwipeDistance) {
+            handleNext()
+        } else if (distance < -minSwipeDistance) {
+            handlePrev()
+        }
+
+        touchStartX.current = 0
+        touchEndX.current = 0
     }
 
     const getVisibleTestimonials = () => {
@@ -64,7 +103,6 @@ export function Testimonials() {
 
     const visibleTestimonials = getVisibleTestimonials()
 
-    // Autoplay pausado caso o usuário passe o mouse para ler com calma
     useEffect(() => {
         if (isPaused) return
 
@@ -73,7 +111,7 @@ export function Testimonials() {
         }, 7000)
 
         return () => clearInterval(interval)
-    }, [currentIndex, isPaused])
+    }, [currentIndex, isPaused, isMobile])
 
     return (
         <S.TestimonialsContainer id="avaliacoes">
@@ -98,7 +136,11 @@ export function Testimonials() {
                     </svg>
                 </S.NavButton>
 
-                <S.CarouselViewport>
+                <S.CarouselViewport
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <S.CardsGrid>
                         {visibleTestimonials.map((item) => (
                             <S.TestimonialCard key={item.id}>

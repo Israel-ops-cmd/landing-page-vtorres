@@ -17,10 +17,10 @@ export const Footer: React.FC = () => {
           <h4>Navegue</h4>
           <S.FooterLinkList>
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#serviços">Serviços</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#avaliacoes">Depoimentos</a></li>
             <li><a href="#contato">Contato</a></li>
           </S.FooterLinkList>
         </S.FooterColumn>
@@ -29,8 +29,16 @@ export const Footer: React.FC = () => {
         <S.FooterColumn>
           <h4>Acompanhe nas redes sociais</h4>
           <S.FooterLinkList>
-            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://wa.me/5584999999999" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+            <li>
+              <a href="https://www.instagram.com/v.torresconstrutora" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/5584987970076?text=Olá,%20gostaria%20de%20orçamento%20para%20construção." target="_blank" rel="noopener noreferrer">
+                Whatsapp
+              </a>
+            </li>
           </S.FooterLinkList>
         </S.FooterColumn>
 
@@ -38,9 +46,9 @@ export const Footer: React.FC = () => {
         <S.FooterColumn>
           <h4>Endereço</h4>
           <p>
-            Av. Exemplo de Castro, 1000 - Sala 501<br />
-            Bairro Nobre, Cidade - Estado<br />
-            CEP: 00000-000
+            Rua Olinto Meira, 1018<br />
+            Alecrim, Natal - RN<br />
+            CEP: 59.030-180
           </p>
         </S.FooterColumn>
       </S.FooterContent>
@@ -48,7 +56,7 @@ export const Footer: React.FC = () => {
       <S.Divider />
 
       <S.CopyrightText>
-        V Torres Engenharia - 2026 © Todos os direitos reservados.
+        V Torres Construtora - 2026 © Todos os direitos reservados.
       </S.CopyrightText>
     </S.FooterContainer>
   )
