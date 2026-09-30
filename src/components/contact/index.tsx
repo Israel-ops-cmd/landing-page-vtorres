@@ -26,9 +26,8 @@ export function Contact() {
             </S.RibbonsWrapper>
 
             <S.ContactBackground>
-                {/* Imagem de fachada moderna com iluminação quente ao entardecer (Alta Definição) */}
                 <img 
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" 
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=78" 
                     alt="Projeto executado pela VTorres" 
                     loading="lazy"
                 />
