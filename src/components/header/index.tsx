@@ -17,7 +17,8 @@ export function Header() {
             {/* Menu Desktop e Mobile */}
             <S.NavList $isOpen={menuOpen}>
                 <li><a href="#inicio" onClick={closeMenu}>Início</a></li>
-                <li><a href="#serviços" onClick={closeMenu}>Serviços</a></li>
+                {/* ID corrigido sem acento para garantir a navegação suave */}
+                <li><a href="#servicos" onClick={closeMenu}>Serviços</a></li>
                 <li><a href="#portfolio" onClick={closeMenu}>Portfólio</a></li>
                 <li><a href="#contato" onClick={closeMenu}>Contato</a></li>
                 

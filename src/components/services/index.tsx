@@ -17,7 +17,7 @@ const servicesData = [
 
 export function Services() {
     return (
-        <S.ServicesContainer id="serviços">
+        <S.ServicesContainer id="servicos">
             <S.HeaderWrapper>
                 <div>
                     <S.SectionTag>A T U A Ç Ã O</S.SectionTag>

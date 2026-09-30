@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       <S.FooterContent>
         {/* Coluna 1: Logo em imagem webp e Descrição */}
         <S.LogoArea>
-          <img src={logoVTorres} alt="V Torres Engenharia" />
+          <img src={logoVTorres} alt="V Torres Engenharia" loading="lazy"/>
           <span>Construtora de Alto Padrão.</span>
         </S.LogoArea>
 
@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
           <h4>Navegue</h4>
           <S.FooterLinkList>
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#serviços">Serviços</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
             <li><a href="#avaliacoes">Depoimentos</a></li>

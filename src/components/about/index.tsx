@@ -18,7 +18,7 @@ export function About() {
             
             {/* Selo minimalista com a logo e o nome ao lado */}
             <S.LogoOverlay>
-              <img src={logoVtorres} alt="Logo Vtorres" />
+              <img src={logoVtorres} alt="Logo Vtorres" loading="lazy"/>
               <S.LogoTextInfo>
                 <span>V Torres</span>
                 <span>Construtora</span>
