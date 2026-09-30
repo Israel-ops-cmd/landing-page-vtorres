@@ -30,6 +30,7 @@ export function Contact() {
                 <img 
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" 
                     alt="Projeto executado pela VTorres" 
+                    loading="lazy"
                 />
                 <S.OverlayGradient />
             </S.ContactBackground>
