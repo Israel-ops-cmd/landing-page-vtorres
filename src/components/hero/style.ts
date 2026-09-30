@@ -11,7 +11,7 @@ export const HeroContainer = styled.section<HeroContainerProps>`
   position: relative;
   display: flex;
   align-items: center;
-  padding: 80px 4rem 0 4rem; /* Adicionado 80px no topo para compensar o header fixo */
+  padding: 80px 4rem 0 4rem;
   box-sizing: border-box;
   overflow: hidden;
 
@@ -22,7 +22,6 @@ export const HeroContainer = styled.section<HeroContainerProps>`
   background-size: cover;
   background-position: center;
 
-  /* Gradiente escuro cobrindo a tela inteira no mobile e lateral no desktop */
   &::before {
     content: '';
     position: absolute;
@@ -87,7 +86,7 @@ export const Subtitle = styled.span`
 
 export const Title = styled.h1`
   color: #ffffff;
-  font-size: clamp(2rem, 4vw, 2.75rem); /* Tamanho fluido que se adapta perfeitamente */
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -137,7 +136,7 @@ export const CtaButton = styled.a`
   }
 
   @media (max-width: 480px) {
-    width: 100%; /* Botão largura total no celular para facilitar o clique */
+    width: 100%;
     padding: 0.85rem 1.5rem;
     font-size: 0.85rem;
   }

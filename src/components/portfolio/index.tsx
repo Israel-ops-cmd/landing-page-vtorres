@@ -23,7 +23,7 @@ export function Portfolio() {
       <S.ProjectsGrid>
         {projects.map((project) => (
           <S.ProjectCard key={project.id}>
-            <S.ProjectImage src={project.image} alt={project.title} />
+            <S.ProjectImage src={project.image} alt={project.title} loading="lazy"/>
             <S.ProjectOverlay>
               <S.ProjectTitle>{project.title}</S.ProjectTitle>
             </S.ProjectOverlay>
