@@ -47,7 +47,7 @@ export function Contact() {
                 </S.SectionDescription>
 
                 <S.WhatsAppButton 
-                    href="https://wa.me/5584999999999?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20projeto/construção." 
+                    href="https://wa.me/5584987970076?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20projeto/construção." 
                     target="_blank" 
                     rel="noopener noreferrer"
                 >

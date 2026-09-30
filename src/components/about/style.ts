@@ -8,9 +8,10 @@ export const AboutContainer = styled.section`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  overflow: hidden;
 
-  @media (max-width: 968px) {
-    padding: 4rem 1.5rem;
+  @media (max-width: 1024px) {
+    padding: 5rem 1.5rem 10rem; /* Aumentado o padding inferior para o botão respirar */
   }
 `
 
@@ -23,7 +24,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   gap: 5rem;
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     gap: 3rem;
   }
@@ -35,7 +36,7 @@ export const ImageAreaWrapper = styled.div`
   align-items: center;
   flex-shrink: 0;
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     width: 100%;
     justify-content: center;
   }
@@ -43,7 +44,7 @@ export const ImageAreaWrapper = styled.div`
 
 export const FloatingTitle = styled.h2`
   position: absolute;
-  left: -3.8rem; 
+  left: -4.8rem; 
   z-index: 3;
   color: #ffffff;
   font-size: 4.8rem;
@@ -55,9 +56,9 @@ export const FloatingTitle = styled.h2`
   letter-spacing: -1px;
   opacity: 0.95;
 
-  @media (max-width: 968px) {
-    left: 0.5rem;
-    font-size: 3rem;
+  /* No telemóvel/tablet removemos o título flutuante para limpar a interface e dar foco à foto e ao conteúdo */
+  @media (max-width: 1024px) {
+    display: none; 
   }
 `
 
@@ -65,15 +66,19 @@ export const ImageColumn = styled.div`
   position: relative;
   width: 360px;
   height: 480px;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
   z-index: 1;
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     width: 100%;
-    max-width: 360px;
-    height: 400px;
+    max-width: 100%;
+    height: 380px;
+  }
+
+  @media (max-width: 480px) {
+    height: 300px;
   }
 `
 
@@ -91,7 +96,7 @@ export const LogoOverlay = styled.div`
   align-items: center;
   gap: 0.75rem;
   z-index: 2;
-  background: rgba(12, 12, 12, 0.6);
+  background: rgba(12, 12, 12, 0.7);
   padding: 0.5rem 0.75rem;
   border-radius: 4px;
   backdrop-filter: blur(4px);
@@ -117,7 +122,7 @@ export const LogoTextInfo = styled.div`
   }
 
   span:last-child {
-    color: #D4AF37; /* Corrigido de preto para dourado para garantir contraste legível */
+    color: #D4AF37;
     font-size: 0.55rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -143,8 +148,9 @@ export const TextColumn = styled.div`
     background: linear-gradient(180deg, #d4af37 0%, transparent 100%);
   }
 
-  @media (max-width: 968px) {
+  @media (max-width: 1024px) {
     padding-left: 0;
+    max-width: 100%;
     &::before {
       display: none;
     }
@@ -184,11 +190,11 @@ export const Description = styled.p`
 
 export const CtaButton = styled.a`
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   background: transparent;
   color: #ffffff;
   border: 1px solid #D4AF37;
-  padding: 0.8rem 2.2rem;
+  padding: 0.9rem 2.2rem;
   border-radius: 4px;
   font-weight: 500;
   text-transform: uppercase;
@@ -205,5 +211,9 @@ export const CtaButton = styled.a`
     color: #F3E5AB;
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; /* Botão com largura total no telemóvel para facilitar o toque com o polegar */
   }
 `

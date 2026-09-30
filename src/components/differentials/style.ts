@@ -11,6 +11,7 @@ export const DifferentialsContainer = styled.section`
   gap: 4rem;
   position: relative;
   
+  /* Mantido exatamente o V assimétrico original que você pediu */
   clip-path: polygon(0 2vw, 35% 5vw, 100% 1.5vw, 100% 100%, 0 100%);
   margin-top: -3.5vw;
   z-index: 3;
@@ -27,6 +28,8 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  max-width: 800px;
+  padding: 0 1rem;
 `
 
 export const SectionTag = styled.span`
@@ -39,13 +42,9 @@ export const SectionTag = styled.span`
 
 export const SectionTitle = styled.h2`
   color: #121212;
-  font-size: 2.2rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
   font-weight: 500;
   letter-spacing: -0.5px;
-
-  @media (max-width: 768px) {
-    font-size: 1.7rem;
-  }
 `
 
 export const CardsGrid = styled.div`
@@ -55,9 +54,10 @@ export const CardsGrid = styled.div`
   width: 100%;
   max-width: 1200px;
 
-  @media (max-width: 968px) {
+  /* Ajustado para 1024px para evitar quebra feia em tablets e notebooks compactos */
+  @media (max-width: 1024px) {
     grid-template-columns: 1fr;
-    max-width: 500px;
+    max-width: 550px;
   }
 `
 
@@ -88,6 +88,10 @@ export const Card = styled.div`
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   }
+
+  @media (max-width: 480px) {
+    padding: 2.2rem 1.5rem;
+  }
 `
 
 export const IconWrapper = styled.div`
@@ -112,23 +116,22 @@ export const CardTitle = styled.h3`
   padding-bottom: 1.2rem;
   margin-bottom: 0.2rem;
 
-  /* LINHA MAIOR E UM POUCO MAIS GROSSA */
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 120px; /* Aumentado de 45px para 65px */
-    height: 3px; /* Aumentado de 2px para 3px */
+    width: 65px;
+    height: 3px;
     background: #d4af37;
     opacity: 0.9;
   }
 `
 
 export const CardDescription = styled.p`
-  color: #ffffff; /* Alterado para branco puro */
+  color: #ffffff;
   font-size: 0.95rem;
   line-height: 1.6;
   font-weight: 300;
-  opacity: 0.9; /* Leve ajuste de opacidade opcional para suavizar o branco puro no fundo escuro, ou remova se quiser 100% opaco */
+  opacity: 0.9;
 `

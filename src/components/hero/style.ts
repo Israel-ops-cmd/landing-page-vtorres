@@ -7,24 +7,22 @@ interface HeroContainerProps {
 export const HeroContainer = styled.section<HeroContainerProps>`
   width: 100%;
   height: 100vh;
-  min-height: 700px;
+  min-height: 650px;
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 4rem;
+  padding: 80px 4rem 0 4rem; /* Adicionado 80px no topo para compensar o header fixo */
   box-sizing: border-box;
   overflow: hidden;
 
-  /* Suavização de fontes global para dar o aspecto minimalista */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Imagem de fundo importada dos assets */
   background-image: url(${props => props.bgImage});
   background-size: cover;
   background-position: center;
 
-  /* Gradiente lateral ajustado para maior suavidade */
+  /* Gradiente escuro cobrindo a tela inteira no mobile e lateral no desktop */
   &::before {
     content: '';
     position: absolute;
@@ -37,18 +35,23 @@ export const HeroContainer = styled.section<HeroContainerProps>`
       #0c0c0c 0%, 
       #0c0c0c 38%, 
       rgba(12, 12, 12, 0.85) 50%, 
-      rgba(12, 12, 12, 0.2) 75%, 
+      rgba(12, 12, 12, 0.3) 75%, 
       transparent 100%
     );
     z-index: 1;
   }
 
   @media (max-width: 968px) {
-    padding: 0 1.5rem;
+    padding: 80px 1.5rem 0 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+
     &::before {
       background: linear-gradient(
         180deg, 
         rgba(12, 12, 12, 0.95) 0%, 
+        rgba(12, 12, 12, 0.85) 50%,
         rgba(12, 12, 12, 0.8) 100%
       );
     }
@@ -58,10 +61,15 @@ export const HeroContainer = styled.section<HeroContainerProps>`
 export const HeroContent = styled.div`
   position: relative;
   z-index: 2;
-  max-width: 680px;
+  max-width: 720px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
+
+  @media (max-width: 968px) {
+    max-width: 100%;
+    align-items: flex-start;
+  }
 `
 
 export const Subtitle = styled.span`
@@ -70,12 +78,16 @@ export const Subtitle = styled.span`
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2.5px;
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
 `
 
 export const Title = styled.h1`
   color: #ffffff;
-  /* Reduzido levemente de 3rem para 2.75rem e ajustado o peso para 600, trazendo sofisticação e minimalismo */
-  font-size: 2.75rem;
+  font-size: clamp(2rem, 4vw, 2.75rem); /* Tamanho fluido que se adapta perfeitamente */
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.5px;
@@ -83,17 +95,13 @@ export const Title = styled.h1`
   span {
     color: #d4af37;
   }
-
-  @media (max-width: 768px) {
-    font-size: 2.1rem;
-  }
 `
 
 export const Description = styled.p`
-  color: #ffffff;
-  font-size: 1.05rem;
+  color: #e0e0e0;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   line-height: 1.7;
-  font-weight: 300; /* Fonte mais leve para dar o toque minimalista da referência */
+  font-weight: 300;
   max-width: 600px;
 `
 
@@ -101,11 +109,11 @@ export const CtaButton = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem; /* Ajustado para acomodar perfeitamente o ícone do WhatsApp */
+  gap: 0.75rem;
   background: linear-gradient(135deg, #fff2b2 0%, #d4af37 50%, #aa7c11 100%);
   color: #0c0c0c;
   padding: 0.9rem 2.2rem;
-  border-radius: 50px; /* Formato pílula idêntico ao Contact */
+  border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -120,10 +128,17 @@ export const CtaButton = styled.a`
     fill: currentColor;
     width: 18px;
     height: 18px;
+    flex-shrink: 0;
   }
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  @media (max-width: 480px) {
+    width: 100%; /* Botão largura total no celular para facilitar o clique */
+    padding: 0.85rem 1.5rem;
+    font-size: 0.85rem;
   }
 `

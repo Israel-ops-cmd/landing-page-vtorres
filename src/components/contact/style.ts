@@ -7,12 +7,13 @@ export const ContactContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: visible; /* Mantém totalmente livre no PC para as fitas entrarem na seção anterior */
   padding: 9rem 1.5rem 8rem 1.5rem;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    padding: 7rem 1rem 5rem 1rem;
+    overflow: hidden; /* Apenas no mobile esconde o excesso lateral */
+    padding: 6rem 1rem 5rem 1rem;
   }
 `
 
@@ -38,7 +39,6 @@ export const OverlayGradient = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  /* Degradê sofisticado que escurece e migra perfeitamente para o preto absoluto na base */
   background: linear-gradient(
     to bottom,
     rgba(10, 10, 10, 0.75) 0%,
@@ -58,6 +58,11 @@ export const RibbonsWrapper = styled.div`
   overflow: visible;
   z-index: 10;
   pointer-events: none;
+
+  /* As fitas aparecem perfeitas no PC e somem apenas em telas menores/mobile (<= 768px) */
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const Ribbon = styled.div`
@@ -109,6 +114,11 @@ export const ContentWrapper = styled.div`
   width: 100%;
   gap: 1.5rem;
   margin-top: 2.5rem;
+
+  @media (max-width: 768px) {
+    margin-top: 0;
+    gap: 1.2rem;
+  }
 `
 
 export const SectionTag = styled.span`
@@ -118,6 +128,10 @@ export const SectionTag = styled.span`
   text-transform: uppercase;
   letter-spacing: 6px;
   opacity: 0.85;
+
+  @media (max-width: 768px) {
+    letter-spacing: 4px;
+  }
 `
 
 export const SectionTitle = styled.h2`
@@ -129,7 +143,8 @@ export const SectionTitle = styled.h2`
   max-width: 900px;
 
   @media (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 `
 
@@ -142,11 +157,11 @@ export const SectionDescription = styled.p`
   opacity: 0.95;
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    padding: 0 0.5rem;
   }
 `
 
-/* BOTÃO WHATSAPP: Estilo padronizado com o CtaButton do Hero (Degradê Dourado/Champanhe e formato pílula) */
 export const WhatsAppButton = styled.a`
   display: inline-flex;
   align-items: center;
@@ -175,5 +190,10 @@ export const WhatsAppButton = styled.a`
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.6rem;
   }
 `
