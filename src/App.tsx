@@ -12,16 +12,18 @@ import { Footer } from "./components/footer"
 function App() {
   return (
     <>
-    <GlobalStyle />
-    <Header />
-    <Hero />
-    <Services />
-    <Differentials />
-    <Portfolio />
-    <About />
-    <Testimonials />
-    <Contact />
-    <Footer />
+      <GlobalStyle />
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <Differentials />
+        <Portfolio />
+        <About />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
     </>
   )
 }
