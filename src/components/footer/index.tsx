@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       <S.FooterContent>
         {/* Coluna 1: Logo em imagem webp e Descrição */}
         <S.LogoArea>
-          <img src={logoVTorres} alt="V Torres Engenharia" loading="lazy"/>
+          <img src={logoVTorres} alt="V Torres Engenharia" width="100" height="88" loading="lazy" />
           <span>Construtora de Alto Padrão.</span>
         </S.LogoArea>
 

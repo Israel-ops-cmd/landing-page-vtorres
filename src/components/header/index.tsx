@@ -11,18 +11,16 @@ export function Header() {
     return (
         <S.HeaderContainer>
             <S.LogoWrapper href="#inicio">
-                <S.LogoImg src={logoImg} alt="Logo V Torres Engenharia" />
+                <S.LogoImg src={logoImg} alt="Logo V Torres Engenharia" width="84" height="74" />
             </S.LogoWrapper>
 
             {/* Menu Desktop e Mobile */}
             <S.NavList $isOpen={menuOpen}>
                 <li><a href="#inicio" onClick={closeMenu}>Início</a></li>
-                {/* ID corrigido sem acento para garantir a navegação suave */}
                 <li><a href="#servicos" onClick={closeMenu}>Serviços</a></li>
                 <li><a href="#portfolio" onClick={closeMenu}>Portfólio</a></li>
                 <li><a href="#contato" onClick={closeMenu}>Contato</a></li>
                 
-                {/* Botão visível dentro do menu mobile para facilitar conversão */}
                 <S.MobileContactButton 
                     href="https://wa.me/5584987970076?text=Olá,%20gostaria%20de%20orçamento%20para%20construção." 
                     target="_blank" 

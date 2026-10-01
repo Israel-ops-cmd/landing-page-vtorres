@@ -14,11 +14,16 @@ export function About() {
           </S.FloatingTitle>
 
           <S.ImageColumn>
-            <S.AboutImage src={aboutImg} alt="Infraestrutura e obras executadas pela Construtora VTorres" />
+            <S.AboutImage 
+              src={aboutImg} 
+              alt="Infraestrutura e obras executadas pela Construtora VTorres" 
+              width="800" 
+              height="600" 
+            />
             
             {/* Selo minimalista com a logo e o nome ao lado */}
             <S.LogoOverlay>
-              <img src={logoVtorres} alt="Logo Vtorres" loading="lazy"/>
+              <img src={logoVtorres} alt="Logo Vtorres" width="40" height="35" loading="lazy" />
               <S.LogoTextInfo>
                 <span>V Torres</span>
                 <span>Construtora</span>

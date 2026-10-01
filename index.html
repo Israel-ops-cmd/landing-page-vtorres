@@ -5,25 +5,27 @@
     <link rel="icon" type="image/svg+xml" href="/./src/assets/logo_vtorres.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- SEO Principal -->
+    {/* SEO e Metatags */}
     <title>VTorres Construtora e Engenharia | Projetos e Obras em Natal - RN</title>
     <meta name="description" content="Especialistas em construção civil, engenharia, projetos estruturais e execução de obras residenciais e comerciais em Natal e região. Solicite seu orçamento!" />
     <meta name="keywords" content="construtora em natal rn, engenharia civil natal, execução de obras, projetos estruturais, vtorres construtora" />
     <meta name="author" content="VTorres Construtora" />
 
-    <!-- Open Graph / Redes Sociais (WhatsApp, LinkedIn, Facebook) -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="VTorres Construtora e Engenharia | Projetos e Obras em Natal - RN" />
     <meta property="og:description" content="Especialistas em construção civil, engenharia e execução de obras de alto padrão em Natal e região." />
     <meta property="og:locale" content="pt_BR" />
 
-    <!-- Preload da Imagem do Hero (Prioridade Máxima de Carregamento) -->
+    {/* Preload da Imagem do Hero */}
     <link rel="preload" as="image" href="/src/assets/hero_pref.webp" fetchpriority="high">
 
-    <!-- Google Fonts (Otimizado com preconnect para carregar mais rápido) -->
+    {/* Google Fonts Otimizado (Assíncrono) */}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap">
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
